@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script src="/socket.io/socket.io.js">
+        </script>
+    </head>
+
+    <body>
+        <h1>Abre la consola para ver los mensajes</h1>
+
+        <script>
+            //Conexiòn a canal de socket
+            var socket = io.connect('http://localhost:3000', {
+                forceNew: true,
+            });
+
+            //Agregamos evento para poder escuchar los mensajes
+            socket.on('message', (data) => {
+                console.log(data);
+            });
+        </script>
+    </body>
+</html>
